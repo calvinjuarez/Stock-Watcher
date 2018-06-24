@@ -17,8 +17,18 @@ export default {
 </script>
 
 <style>
+:root {
+	--white:      #fff;
+	--gray-light: #ddd;
+	--black:      #444; /* "re-mapped" for convenience */
+
+	--font-droid: "Droid Serif";
+	--font-serif: Cambria, Georgia, Times, serif;
+	--font-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--font-stack: var(--font-droid), var(--font-serif), var(--font-emoji);
+}
 #app {
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	font-family: var(--font-stack);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
