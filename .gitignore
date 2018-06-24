@@ -1,0 +1,5 @@
+# Dev
+*.local
+
+# OS
+.DS_Store
