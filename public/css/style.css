@@ -9,6 +9,8 @@
   --green: #73ad21;
   --padding-v: 20px;
   --padding-v-more: 40px;
+  --padding-h: 30px;
+  --padding-h-more: 50px;
   --size-h1: 36px;
   --size-h2: 24px;
   --size-h3: ;
@@ -20,6 +22,9 @@ body {
   color: #444;
   font-family: "Droid Serif", Cambria, Georgia, Times, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: #ddd;
+}
+* {
+  box-sizing: border-box;
 }
 h1,
 .h1,
@@ -81,7 +86,47 @@ p {
   margin-bottom: 10px;
 }
 .footer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #bbb;
+  font-size: 0.72em;
   text-align: center;
+}
+.footer a {
+  color: #73ad21;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #008001;
+}
+/*input,select,textarea*/
+.form-control,
+.form-button {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.form-control {
+  border-style: solid;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-color: #bbb;
+  border-radius: 2px;
+  font-weight: bold;
+}
+.form-small {
+  font-size: 0.72em;
+}
+.button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-style: solid;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
 }
 .for-screenreaders {
   position: absolute;

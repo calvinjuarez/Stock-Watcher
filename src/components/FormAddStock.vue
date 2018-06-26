@@ -1,8 +1,8 @@
 <template>
-<form id="add-stock">
+<form class="form form-small  add-stock" id="add-stock">
 	<label class="for-screenreaders" for="add-stock-symbol">Enter stock symbol</label>
-	<input class="form-control" id="add-stock-symbol" name="add-stock-symbol" type="text" placeholder="Enter stock symbol..." required>
-	<button class="button" id="add-stock-submit" name="add-stock-submit" type="submit">Add</button>
+	<input class="form-control  add-stock-symbol" id="add-stock-symbol" name="add-stock-symbol" type="text" placeholder="Enter stock symbol..." required>
+	<button class="button  form-button  add-stock-submit" id="add-stock-submit" name="add-stock-submit" type="submit">Add</button>
 </form>
 </template>
 
@@ -12,4 +12,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+/*form*/.add-stock {}
+/*input*/.add-stock-symbol {}
+/*button*/.add-stock-submit {
+	min-width: 10em;
+	color: var(--white);
+	text-transform: uppercase;
+	background-color: var(--green);
+}
+</style>

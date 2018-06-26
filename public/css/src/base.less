@@ -16,8 +16,10 @@
 	--black:      @black;
 	--green:      @green;
 
-	--padding-v:      @base-padding-v;
-	--padding-v-more: (@base-padding-v * 2);
+	--padding-v:      @padding-v;
+	--padding-v-more: @padding-v-more;
+	--padding-h:      @padding-h;
+	--padding-h-more: @padding-h-more;
 
 	--size-h1: @size-h1;
 	--size-h2: @size-h2;
@@ -36,6 +38,9 @@ body {
 	font-family: @font-stack;
 	background-color: @gray-light;
 }
+* {
+	box-sizing: border-box;
+}
 
 //! -- Type
 /// ------------------------
@@ -51,12 +56,12 @@ h6, .h6 {
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-	margin-bottom: (@base-padding-v * 2);
+	margin-bottom: (@padding-v * 2);
 }
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	margin-bottom: @base-padding-v
+	margin-bottom: @padding-v
 }
 h1, .h1 {
 	font-size: @size-h1;
@@ -78,6 +83,6 @@ h6, .h6 {
 }
 p {
 	margin-top: 0;
-	margin-bottom: (@base-padding-v / 2);
+	margin-bottom: (@padding-v / 2);
 }
 

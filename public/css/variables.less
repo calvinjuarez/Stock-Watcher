@@ -25,13 +25,6 @@
 @red:          #f00;
 
 
-//! SPACING
-//! --------------------------------------------------
-
-@base-padding-v:   20px;
-@base-padding-h:   16px;
-
-
 //! TYPOGRAPHY
 //! --------------------------------------------------
 
@@ -41,3 +34,36 @@
 @size-h4:   ;
 @size-h5:   ;
 @size-h6:   ;
+
+@size-small:   .72em;
+
+
+//! GENERIC DEFAULTS
+//! --------------------------------------------------
+
+//! -- Spacing
+/// ------------------------
+@padding-v:        20px;
+@padding-h:        30px;
+@padding-v-more:   (@padding-v * 2);
+@padding-h-more:   (@padding-h + @padding-v);
+
+//! -- Appearance
+/// ------------------------
+@base-border-radius:   2px;
+
+
+//! FORMS
+//! --------------------------------------------------
+
+@input-padding-v:       16px;
+@input-padding-h:       (@padding-h / 4);
+
+@input-border-radius:   @base-border-radius;
+@input-border-color:    @gray;
+
+
+//! BUTTONS
+//! --------------------------------------------------
+
+@button-border-radius:   @base-border-radius;

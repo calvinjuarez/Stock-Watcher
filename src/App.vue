@@ -25,5 +25,4 @@ export default {
 	margin-top:    var(--padding-v-more);
 	margin-bottom: var(--padding-v-more);
 }
-
 </style>
