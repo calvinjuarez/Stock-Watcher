@@ -26,6 +26,10 @@ body {
 * {
   box-sizing: border-box;
 }
+pre,
+code {
+  font-family: "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
 h1,
 .h1,
 h2,
@@ -137,5 +141,14 @@ p {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
 }
 /*# sourceMappingURL=style.css.map */

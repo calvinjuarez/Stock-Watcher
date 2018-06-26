@@ -1,6 +1,8 @@
 <template>
 <div class="stocks" v-if="Object.keys(this.$root.stocks).length > 0">
-	<article class="stock" v-for="(stock, i) in this.$root.stocks" :key="i">{{ stock }}</article>
+	<template v-for="(stock, i) in this.$root.stocks">
+	<Stock class="stock" :key="i" :stock="stock" />
+	</template>
 </div>
 <div class="stocks stocks-empty" v-else>
 	<p>No stocks yet!</p>
