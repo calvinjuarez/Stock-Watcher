@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "vue-cli-service serve && npm run css",
+    "build": "vue-cli-service build && npm run css",
+    "lint": "vue-cli-service lint",
+    "css": "./node_modules/.bin/lessc --strict-math=on --source-map=public/css/style.css.map --source-map-basepath=public/css/ --autoprefix='> 5%, last 2 versions, Firefox ESR' public/css/style.less public/css/style.css"
   },
   "dependencies": {
     "vue": "^2.5.16",
