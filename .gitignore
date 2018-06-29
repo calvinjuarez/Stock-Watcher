@@ -1,5 +1,6 @@
 # Dev
 *.local
+node_modules
 
 # OS
 .DS_Store
