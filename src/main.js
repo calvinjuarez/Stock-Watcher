@@ -6,6 +6,8 @@
 import Vue         from 'vue'
 import VueResource from 'vue-resource'
 
+import { INFORM, SUCCEED, WARN, ERR } from './constants/messageSeverity' // eslint-disable-line no-unused-vars
+
 import App from './App.vue'
 
 
@@ -58,9 +60,11 @@ new Vue({
 		 *                                   @see {@link https://iextrading.com/developer/docs/#logo}
 		 */
 		addStock(stock) {
-			console.group('Adding stock: ' + stock.symbol.toUpperCase())
+			console.group(`Adding stock with symbol: ${stock.symbol.toUpperCase()}`)
 			console.dir(stock)
+
 			this.stocks.push(stock)
+
 			console.groupEnd()
 		},
 		/**
@@ -70,39 +74,57 @@ new Vue({
 		 * @param  {string}  symbol  The stock symbol to remove.
 		 */
 		removeStock(symbol) {
-			console.group('Removing stock: ' + symbol.toUpperCase())
-			this.stocks = this.stocks.filter(stock => stock.symbol !== symbol)
+			const previousStocksLength = this.stocks.length
+
+			symbol = symbol.toUpperCase() // enforce uppercase
+
+			console.group(`Removing stock with symbol: ${symbol}`)
+
+			this.stocks = this.stocks.filter(stock => stock.symbol.toUpperCase() !== symbol) // .toUpperCase makes the matching case-insensitive
+
+			if (this.stocks.length === previousStocksLength)
+				console.warn('No stock was removed.')
+
 			console.groupEnd()
 		},
 
 		/**
 		 * Add a user-facing message to the messages output.
 		 *
-		 * @param  {Object}  stock           The stock object.
-		 * @param  {string}  stock.symbol    The stock's symbol.
-		 * @param  {Object}  stock.company   Data on the company, including it's full name.
-		 *                                   @see {@link https://iextrading.com/developer/docs/#company}
-		 * @param  {Object}  stock.previous  Data on the previous day.
-		 *                                   @see {@link https://iextrading.com/developer/docs/#previous}
-		 * @param  {number}  stock.price     The current stock price.
-		 *                                   @see {@link https://iextrading.com/developer/docs/#price}
-		 * @param  {string}  stock.logo      A URL pointing to the company's logo.
-		 *                                   @see {@link https://iextrading.com/developer/docs/#logo}
+		 * TODO: Allow passing an object instead of separate arguments.
+		 *
+		 * @param  {string}  text                 The text of the message to add.
+		 * @param  {string}  [severity='INFORM']  One of 'SUCCEED', 'INFORM', 'WARN', or 'ERR'.
+		 *                                        Corresponding constants are provided in
+		 *                                        constants/messageSeverity.js for convenience.
 		 */
-		addStock(stock) {
-			console.group('Adding stock: ' + stock.symbol.toUpperCase())
-			console.dir(stock)
-			this.stocks.push(stock)
+		addMessage(text, severity=INFORM) {
+			console.group(`Adding message with text: "${text}"`)
+			console.log(`Severity: ${severity}`)
+
+			this.messages.push({ severity, text })
+
 			console.groupEnd()
 		},
 		/**
 		 * Remove a user-facing message to the messages output.
 		 *
-		 * @param  {string}  symbol  The stock symbol to remove.
+		 * TODO: Allow passing an object and just pull text out of it.
+		 * TODO: Allow passing the index, but only as a number (not a quoted number, since '0' is a
+		 * valid---though likely unhelpful---user message).
+		 *
+		 * @param  {string}  text  The text of the message to remove.
 		 */
-		removeStock(symbol) {
-			console.group('Removing stock: ' + symbol.toUpperCase())
-			this.stocks = this.stocks.filter(stock => stock.symbol !== symbol)
+		removeMessage(text) {
+			console.group(`Attempting to remove message with text: "${text}"`)
+
+			const previousMessagesLength = this.messages.length
+
+			this.messages = this.messages.filter(message => text !== message.text)
+
+			if (this.messages.length === previousMessagesLength)
+				console.warn('No message was removed.')
+
 			console.groupEnd()
 		},
 
