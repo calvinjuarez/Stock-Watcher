@@ -18,6 +18,7 @@
 @white:        #fff;
 @gray-light:   #ddd;
 @gray:         #bbb;
+@gray-dark:    #777;
 @black:        #444; // "re-mapped" for convenience
 
 @green:        #73ad21;
@@ -83,10 +84,10 @@
 
 @minmax-height:          8em;
 
-@minmax-pointer-color:   @gray;
-@minmax-pointer-size:    10px;
+@minmax-pointer-color:   currentcolor;
+@minmax-pointer-size:    .8em;
 
-@minmax-line-color:      @gray;
+@minmax-line-color:      currentcolor;
 @minmax-line-width:      2px;
 
 
@@ -95,4 +96,3 @@
 //  Many of these variables will be exposed as CSS var()s for use in the component CSS.
 
 @stock-card-width:          320px;
-@stock-card-chart-height:   @minmax-height;

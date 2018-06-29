@@ -5,6 +5,7 @@
   --white: #fff;
   --gray-light: #ddd;
   --gray: #bbb;
+  --gray-dark: #777;
   --black: #444;
   --green: #73ad21;
   --forest: #008001;
@@ -20,8 +21,6 @@
   --size-h5: ;
   --size-h6: ;
   --stock-card-width: 320px;
-  --stock-card-chart-height: 8em;
-  --stock-card-row-height: 4em;
 }
 body {
   color: #444;
@@ -145,73 +144,101 @@ p {
   background-color: #fff;
   border-radius: 4px;
 }
-/*input[type='range']*/
+.minmax {
+  display: -ms-flexbox;
+  display: flex;
+}
 .minmax-chart {
+  max-width: 0.8em;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  /*input[type='range']*/
+}
+.minmax-chart .minmax-chart-display {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  transform: rotate(-90deg);
-  color: #bbb;
+  width: 8em;
+  color: currentcolor;
+  margin-left: -3.6em;
 }
-.minmax-chart:focus {
+.minmax-chart .minmax-chart-display:focus {
   outline: none;
 }
-.minmax-chart::-webkit-slider-runnable-track {
-  width: 8em;
+.minmax-chart .minmax-chart-display::-webkit-slider-runnable-track {
   height: 2px;
+  background: currentcolor;
   border-color: transparent;
   cursor: default;
-  background-color: #bbb;
 }
-.minmax-chart::-webkit-slider-thumb {
+.minmax-chart .minmax-chart-display::-webkit-slider-thumb {
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid currentcolor;
+  border-left: 0.4em solid transparent;
+  border-right: 0.4em solid transparent;
+  border-top: 0.8em solid currentcolor;
   cursor: default;
   -webkit-appearance: none;
           appearance: none;
-  margin-top: -10px;
+  margin-top: -0.8em;
 }
-.minmax-chart::-moz-range-track {
-  width: 8em;
+.minmax-chart .minmax-chart-display::-moz-range-track {
   height: 2px;
+  background: currentcolor;
   border-color: transparent;
   cursor: default;
-  background-color: #bbb;
 }
-.minmax-chart::-moz-range-thumb {
+.minmax-chart .minmax-chart-display::-moz-range-thumb {
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid currentcolor;
+  border-left: 0.4em solid transparent;
+  border-right: 0.4em solid transparent;
+  border-top: 0.8em solid currentcolor;
   cursor: default;
 }
-.minmax-chart::-ms-track {
-  width: 8em;
+.minmax-chart .minmax-chart-display::-ms-track {
   height: 2px;
+  background: currentcolor;
   cursor: default;
   border-radius: 0;
   background: transparent;
   border-color: transparent;
-  border-width: 10px 0;
+  border-width: 0.8em 0;
   color: transparent;
 }
-.minmax-chart::-ms-fill-lower {
-  background-color: #bbb;
+.minmax-chart .minmax-chart-display::-ms-fill-lower {
+  background-color: currentcolor;
 }
-.minmax-chart::-ms-fill-upper {
-  background-color: #bbb;
+.minmax-chart .minmax-chart-display::-ms-fill-upper {
+  background-color: currentcolor;
 }
-.minmax-chart::-ms-thumb {
+.minmax-chart .minmax-chart-display::-ms-thumb {
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid currentcolor;
+  border-left: 0.4em solid transparent;
+  border-right: 0.4em solid transparent;
+  border-top: 0.8em solid currentcolor;
   cursor: default;
+}
+.minmax-labels {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.minmax-label {
+  margin-left: 0.4em;
+}
+.minmax-label-high {
+  top: 0;
+}
+.minmax-label-low {
+  bottom: 0;
 }
 .for-screenreaders {
   position: absolute;

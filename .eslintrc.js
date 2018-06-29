@@ -11,9 +11,10 @@ module.exports = {
 		'plugin:vue/essential',
 	],
 	rules: {
-		'indent'      : ['error', 'tab'],
-		'no-tabs'     : 'off',
-		'no-console'  : process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'no-debugger' : process.env.NODE_ENV === 'production' ? 'error' : 'off',
+		'indent'                   : ['error', 'tab'],
+		'no-console'               : process.env.NODE_ENV === 'production' ? 'error' : 'off',
+		'no-debugger'              : process.env.NODE_ENV === 'production' ? 'error' : 'off',
+		'no-mixed-spaces-and-tabs' : ['error', 'smart-tabs'],
+		'no-tabs'                  : 'off',
 	},
 }

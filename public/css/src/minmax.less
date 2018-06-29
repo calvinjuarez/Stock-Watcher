@@ -1,0 +1,89 @@
+//
+// Min/Max Chart, built on `input[type='range']` - minmax-chart.less
+//
+
+.minmax {
+	display: flex;
+}
+	.minmax-chart {
+		max-width: @minmax-pointer-size;
+		transform: rotate(-90deg);
+		transform-origin: center center;
+		align-self: center; // gives me a nice center relative to which I can work more sensibly
+
+		/*input[type='range']*/.minmax-chart-display {
+			appearance: none;
+			width: @minmax-height;
+			color: @minmax-pointer-color;
+			margin-left: (-1 * (@minmax-height - @minmax-pointer-size) / 2); // nudge over so it's centered (before it's rotated)
+
+			// local private mixins, to keep things DRY
+			#_track() {
+				height: @minmax-line-width;
+				background: @minmax-line-color;
+				border-color: transparent;
+				cursor: default;
+			}
+			#_thumb() {
+				width:  0;
+				height: 0;
+				border-left:  (1/2 * @minmax-pointer-size) solid transparent;
+				border-right: (1/2 * @minmax-pointer-size) solid transparent;
+				border-top:   @minmax-pointer-size solid currentcolor;
+				cursor: default;
+			}
+
+			&:focus {
+				outline: none;
+			}
+
+			&::-webkit-slider-runnable-track {
+				#_track();
+			}
+			&::-webkit-slider-thumb {
+				#_thumb();
+				appearance: none;
+				margin-top: -@minmax-pointer-size;
+			}
+
+			&::-moz-range-track {
+				#_track();
+			}
+			&::-moz-range-thumb {
+				#_thumb();
+			}
+
+			&::-ms-track {
+				#_track();
+				border-radius: 0;
+				// things to make IE work
+				background: transparent;
+				border-color: transparent;
+				border-width: @minmax-pointer-size 0;
+				color: transparent;
+			}
+			&::-ms-fill-lower {
+				background-color: @minmax-line-color;
+			}
+			&::-ms-fill-upper {
+				background-color: @minmax-line-color;
+			}
+			&::-ms-thumb {
+				#_thumb();
+			}
+		}
+	}
+	.minmax-labels {
+		display: flex;
+		flex-flow: column;
+		justify-content: space-between;
+	}
+		.minmax-label {
+			margin-left: (@minmax-pointer-size / 2); // give the display some space
+		}
+		.minmax-label-high {
+			top: 0;
+		}
+		.minmax-label-low {
+			bottom: 0;
+		}
