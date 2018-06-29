@@ -1,6 +1,6 @@
 <template>
-<div class="stocks" v-if="Object.keys(this.$root.stocks).length > 0">
-	<template v-for="(stock, i) in this.$root.stocks">
+<div class="stocks" v-if="Object.keys(stocks).length > 0">
+	<template v-for="(stock, i) in stocks">
 	<Stock :key="i" :stock="stock" />
 	</template>
 </div>
@@ -14,6 +14,9 @@ import Stock from './Stock.vue'
 
 export default {
 	name: 'stocks',
+	props: {
+		stocks: Array,
+	},
 	components: {
 		Stock,
 	},

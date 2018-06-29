@@ -19,9 +19,12 @@ export default {
 		 */
 		handleSubmit() {
 			const symbol = this.symbol.toLowerCase()
+			const _finally = (() => { this.$el.disabled = false; }) // Safari and Edge don't do .finally() yet, according to MDN.  :/  Neither does Node, for that matter.
+
+			this.$el.disabled = true;
 
 			if (this.$root.stocks.find(stock => stock.symbol === symbol))
-				console.warn('Stock not added \'cause it\'s already present.') // TODO: Handle duplicate.
+				console.warn('Stock not added \'cause it\'s already present.') // TODO: Message duplicate entry better to the user.
 			else
 				this.$root.getStock(symbol)
 					.then(response => {
@@ -29,8 +32,14 @@ export default {
 
 						this.$root.addStock({ symbol, company, previous, price, logo })
 						this.$el.querySelector('#add-stock-symbol').value = ''
+
+						_finally()
 					})
-					.catch(error => console.error(error.message)) // TODO: Handle failure.
+					.catch(error => {
+						console.error(error.message) // TODO: Message failure to the user better.
+
+						_finally()
+					})
 		},
 	},
 }

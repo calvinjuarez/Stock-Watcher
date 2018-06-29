@@ -19,6 +19,7 @@ new Vue({
 
 	data: {
 		stocks: [],
+		messages: [],
 	},
 	methods: {
 		/**
@@ -73,5 +74,37 @@ new Vue({
 			this.stocks = this.stocks.filter(stock => stock.symbol !== symbol)
 			console.groupEnd()
 		},
+
+		/**
+		 * Add a user-facing message to the messages output.
+		 *
+		 * @param  {Object}  stock           The stock object.
+		 * @param  {string}  stock.symbol    The stock's symbol.
+		 * @param  {Object}  stock.company   Data on the company, including it's full name.
+		 *                                   @see {@link https://iextrading.com/developer/docs/#company}
+		 * @param  {Object}  stock.previous  Data on the previous day.
+		 *                                   @see {@link https://iextrading.com/developer/docs/#previous}
+		 * @param  {number}  stock.price     The current stock price.
+		 *                                   @see {@link https://iextrading.com/developer/docs/#price}
+		 * @param  {string}  stock.logo      A URL pointing to the company's logo.
+		 *                                   @see {@link https://iextrading.com/developer/docs/#logo}
+		 */
+		addStock(stock) {
+			console.group('Adding stock: ' + stock.symbol.toUpperCase())
+			console.dir(stock)
+			this.stocks.push(stock)
+			console.groupEnd()
+		},
+		/**
+		 * Remove a user-facing message to the messages output.
+		 *
+		 * @param  {string}  symbol  The stock symbol to remove.
+		 */
+		removeStock(symbol) {
+			console.group('Removing stock: ' + symbol.toUpperCase())
+			this.stocks = this.stocks.filter(stock => stock.symbol !== symbol)
+			console.groupEnd()
+		},
+
 	},
 })
