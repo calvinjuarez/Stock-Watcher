@@ -11,28 +11,56 @@
 //  Consider moving to a dedicated file named something more obvious.
 
 :root {
+
+	//! -- Generic
+	/// ------------------------
 	--white:      @white;
 	--gray-light: @gray-light;
 	--gray:       @gray;
 	--gray-dark:  @gray-dark;
 	--black:      @black;
+	--red:        @red;
 	--green:      @green;
 	--forest:     @forest;
-	--red:        @red;
 
+	--red-bg:    mix(@white, @red   , 70%);
+	--yellow-bg: mix(@white, @yellow, 70%);
+	--green-bg:  mix(@white, @green , 70%);
+
+	--red-border:    mix(@black, @red   , 50%);
+	--yellow-border: mix(@black, @yellow, 50%);
+	--green-border:  mix(@black, @green , 50%);
+
+	--padding-v-less: @padding-v-less;
+	--padding-h-less: @padding-h-less;
 	--padding-v:      @padding-v;
-	--padding-v-more: @padding-v-more;
 	--padding-h:      @padding-h;
+	--padding-v-more: @padding-v-more;
 	--padding-h-more: @padding-h-more;
 
-	--size-h1: @size-h1;
-	--size-h2: @size-h2;
-	--size-h3: @size-h3;
-	--size-h4: @size-h4;
-	--size-h5: @size-h5;
-	--size-h6: @size-h6;
+	--size-h1:    @size-h1;
+	--size-h2:    @size-h2;
+	--size-h3:    @size-h3;
+	--size-h4:    @size-h4;
+	--size-h5:    @size-h5;
+	--size-h6:    @size-h6;
+	--size-small: @size-small;
 
-	--stock-card-width: @stock-card-width;
+	--border-width: @base-border-width;
+	--border-color: @base-border-color;
+
+	//! -- Components
+	/// ------------------------
+	--add-stock-form-width-xs: @add-stock-form-width-xs;
+	--add-stock-form-width-sm: @add-stock-form-width-sm;
+
+	--stock-card-width-xs: @stock-card-width-xs;
+	--stock-card-width-sm: @stock-card-width-sm;
+
+	--message-padding:       @message-padding;
+	--message-border-radius: @message-border-radius;
+
+	font-size: @size-base; // set rem
 }
 
 
@@ -42,6 +70,7 @@
 body {
 	color: @black;
 	font-family: @font-stack;
+	font-size: @size-base;
 	background-color: @gray-light;
 }
 * {

@@ -7,6 +7,12 @@
 	.button-unset();
 	font-weight: bold;
 	text-align: center;
+	border: @button-border-width solid @button-border-color;
 	border-radius: @button-border-radius;
 	cursor: pointer;
+
+	&:active,
+	&:focus {
+		color: inherit;
+	}
 }

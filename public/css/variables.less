@@ -21,22 +21,25 @@
 @gray-dark:    #777;
 @black:        #444; // "re-mapped" for convenience
 
+@red:          #f00;
+@yellow:       #fc4;
 @green:        #73ad21;
 @forest:       #008001;
-@red:          #f00;
 
 
 //! TYPOGRAPHY
 //! --------------------------------------------------
 
-@size-h1:   36px;
-@size-h2:   24px;
-@size-h3:   ;
-@size-h4:   ;
-@size-h5:   ;
-@size-h6:   ;
+@size-base:    12px;
 
-@size-small:   .72em;
+@size-h1:      3rem;   // 36px
+@size-h2:      2rem;   // 24px
+@size-h3:      1.5rem; // 18px
+@size-h4:      1rem;   // 12px
+@size-h5:      1rem;   // 12px
+@size-h6:      .8rem;  // 10px
+
+@size-small:   .8em; // note: em, not rem
 
 
 //! GENERIC DEFAULTS
@@ -53,6 +56,8 @@
 
 //! -- Appearance
 /// ------------------------
+@base-border-width:    1px;
+@base-border-color:    currentcolor;
 @base-border-radius:   4px;
 
 
@@ -62,20 +67,26 @@
 @input-padding-v:       16px;
 @input-padding-h:       (@padding-h / 4);
 
-@input-border-radius:   @base-border-radius;
+@input-border-width:    @base-border-width;
 @input-border-color:    @gray;
+@input-border-radius:   @base-border-radius;
 
 
 //! BUTTONS
 //! --------------------------------------------------
 
+@button-border-width:    @base-border-width;
+@button-border-color:    currentcolor;
 @button-border-radius:   @base-border-radius;
 
 
 //! CARDS
 //! --------------------------------------------------
 
-@card-padding:         10px;
+@card-padding:         @padding-v-less;
+
+@card-border-width:    @base-border-width;
+@card-border-color:    @gray;
 @card-border-radius:   @base-border-radius;
 
 
@@ -95,4 +106,17 @@
 //! --------------------------------------------------
 //  Many of these variables will be exposed as CSS var()s for use in the component CSS.
 
-@stock-card-width:          320px;
+//! -- Add Stock Form
+/// ------------------------
+@add-stock-form-width-xs:   @stock-card-width-xs;
+@add-stock-form-width-sm:   @stock-card-width-sm;
+
+//! -- Stock Cards
+/// ------------------------
+@stock-card-width-xs:   @stock-card-width-sm;
+@stock-card-width-sm:   320px;
+
+//! -- Messages
+/// ------------------------
+@message-padding:         @padding-v-less;
+@message-border-radius:   @base-border-radius;

@@ -1,15 +1,15 @@
 <template>
 <article class="card  stock-card">
 	<header class="stock-card-header">
-		<h3 class="stock-card-name">{{ truncateLongName(stock.company.companyName) }}</h3>
+		<h4 class="stock-card-name">{{ truncateLongName(stock.company.companyName) }}</h4>
 		<span class="stock-card-symbol">{{ stock.company.symbol }}</span>
 	</header>
 	<div class="stock-card-content">
 		<div class="stock-card-change stock-card-change-positive" v-if="stock.previous.change >= 0">
-			<small>&#x25b2; {{ stock.previous.change }} ({{ stock.previous.changePercent }}%)</small>
+			&#x25b2; {{ stock.previous.change }} ({{ stock.previous.changePercent }}%)
 		</div>
 		<div class="stock-card-change stock-card-change-negative" v-else>
-			<small>&#x25bc; {{ stock.previous.change }} ({{ stock.previous.changePercent }}%)</small>
+			&#x25bc; {{ stock.previous.change }} ({{ stock.previous.changePercent }}%)
 		</div>
 		<div class="stock-card-price">${{ stock.previous.close }}</div>
 	</div>
@@ -48,10 +48,19 @@ export default {
 <style>
 .stock-card {
 	display: grid;
-	grid-template: 'title chart' 4em
-	               'main  chart' 4em; /* CSS vars don't yet work with grid. :/  In production, I'd figure out Less in component styles. */
-	max-width: var(--stock-card-width);
+	grid-template: 'title main' auto; /* CSS vars don't yet work with grid just yet, since the type isn't explicity yet. :/  In production, I'd figure out Less in component styles. */
+	max-width: 100%;
+	margin-left:  var(--padding-h-less);
+	margin-right: var(--padding-h-less);
 	text-align: left;
+}
+@media (min-width: 500px) {
+	.stock-card {
+		grid-template: 'title chart' 4em
+		               'main  chart' 4em; /* CSS vars don't yet work with grid just yet, since the type isn't explicity yet. :/  In production, I'd figure out Less in component styles. */
+		margin-left:  0;
+		margin-right: 0;
+	}
 }
 	.stock-card-header {
 		grid-area: title;
@@ -61,13 +70,24 @@ export default {
 			white-space: nowrap;
 			text-overflow: ellipsis;
 		}
+		@media (min-width: 500px) {
+			.stock-card-name {
+				font-size: var(--size-h3);
+			}
+		}
 		.stock-card-symbol {
 			color: var(--gray);
 			font-weight: bold;
 		}
 	.stock-card-content {
 		grid-area: main;
-		align-self: end;
+		text-align: right;
+	}
+	@media (min-width: 500px) {
+		.stock-card-content {
+			align-self: end;
+			text-align: left;
+		}
 	}
 		.stock-card-change {}
 		.stock-card-change-positive {
@@ -76,10 +96,18 @@ export default {
 		.stock-card-change-negative {
 			color: var(--red);
 		}
+		.stock-card-price {
+			font-size: var(--size-h3);
+		}
 	.stock-card-chart {
 		grid-area: chart;
 		justify-self: end;
 		color: var(--gray);
+	}
+	@media (max-width: 499px) {
+		.stock-card-chart {
+			display: none;
+		}
 	}
 		.stock-card-chart-label {
 			color: var(--gray-dark);

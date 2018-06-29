@@ -7,24 +7,42 @@
   --gray: #bbb;
   --gray-dark: #777;
   --black: #444;
+  --red: #f00;
   --green: #73ad21;
   --forest: #008001;
-  --red: #f00;
+  --red-bg: #ffb3b3;
+  --yellow-bg: #fff0c7;
+  --green-bg: #d5e6bc;
+  --red-border: #a22222;
+  --yellow-border: #a28844;
+  --green-border: #5c7933;
+  --padding-v-less: 10px;
+  --padding-h-less: 10px;
   --padding-v: 20px;
-  --padding-v-more: 40px;
   --padding-h: 30px;
+  --padding-v-more: 40px;
   --padding-h-more: 50px;
-  --size-h1: 36px;
-  --size-h2: 24px;
-  --size-h3: ;
-  --size-h4: ;
-  --size-h5: ;
-  --size-h6: ;
-  --stock-card-width: 320px;
+  --size-h1: 3rem;
+  --size-h2: 2rem;
+  --size-h3: 1.5rem;
+  --size-h4: 1rem;
+  --size-h5: 1rem;
+  --size-h6: 0.8rem;
+  --size-small: 0.8em;
+  --border-width: 1px;
+  --border-color: currentcolor;
+  --add-stock-form-width-xs: 320px;
+  --add-stock-form-width-sm: 320px;
+  --stock-card-width-xs: 320px;
+  --stock-card-width-sm: 320px;
+  --message-padding: 10px;
+  --message-border-radius: 4px;
+  font-size: 12px;
 }
 body {
   color: #444;
   font-family: "Droid Serif", Cambria, Georgia, Times, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
   background-color: #ddd;
 }
 * {
@@ -67,27 +85,27 @@ h6,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 3rem;
 }
 h2,
 .h2 {
-  font-size: 24px;
+  font-size: 2rem;
 }
 h3,
 .h3 {
-  font-size: ;
+  font-size: 1.5rem;
 }
 h4,
 .h4 {
-  font-size: ;
+  font-size: 1rem;
 }
 h5,
 .h5 {
-  font-size: ;
+  font-size: 1rem;
 }
 h6,
 .h6 {
-  font-size: ;
+  font-size: 0.8rem;
 }
 p {
   margin-top: 0;
@@ -96,8 +114,10 @@ p {
 .footer {
   margin-top: 40px;
   margin-bottom: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: #bbb;
-  font-size: 0.72em;
+  font-size: 0.8em;
   text-align: center;
 }
 .footer a {
@@ -110,8 +130,6 @@ p {
 /*input,select,textarea*/
 .form-control,
 .form-button {
-  margin-left: 7.5px;
-  margin-right: 7.5px;
   padding-top: 16px;
   padding-bottom: 16px;
 }
@@ -119,22 +137,25 @@ p {
   border-style: solid;
   padding-left: 30px;
   padding-right: 30px;
-  border-color: #bbb;
+  border: 1px solid #bbb;
   border-radius: 4px;
   font-weight: bold;
-}
-.form-small {
-  font-size: 0.72em;
 }
 .button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border-style: solid;
+  background: transparent;
   font-weight: bold;
   text-align: center;
+  border: 1px solid currentcolor;
   border-radius: 4px;
   cursor: pointer;
+}
+.button:active,
+.button:focus {
+  color: inherit;
 }
 .card {
   padding-top: 10px;
@@ -142,6 +163,7 @@ p {
   padding-left: 10px;
   padding-right: 10px;
   background-color: #fff;
+  border: 1px solid #bbb;
   border-radius: 4px;
 }
 .minmax {

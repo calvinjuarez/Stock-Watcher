@@ -26,14 +26,19 @@ export default {
 <style>
 .stocks {
 	display: grid;
-	grid-gap: var(--padding-h);
-	grid-template-columns: repeat(auto-fill, var(--stock-card-width));
+	grid-gap: var(--padding-h-less);
+	grid-template-columns: repeat(auto-fill, var(--stock-card-width-xs));
 	justify-content: center;
 	align-items: stretch;
 	margin-top:    var(--padding-v-more);
 	margin-bottom: var(--padding-v-more);
-	padding-left:  var(--padding-h-more);
-	padding-right: var(--padding-h-more);
+}
+@media (min-width: 760px) {
+	.stocks {
+		grid-template-columns: repeat(auto-fill, var(--stock-card-width-sm));
+		margin-left:  var(--padding-h-more);
+		margin-right: var(--padding-h-more);
+	}
 }
 .stocks-empty {
 	grid-template-columns: var(--stock-card-width);
