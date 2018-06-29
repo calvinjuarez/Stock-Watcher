@@ -1,0 +1,130 @@
+//
+// Global Base Element Styles - base.less
+//
+
+
+//! CSS VARIABLES
+//! --------------------------------------------------
+//  I'm selectively exposing certain variables for use in the component CSS.  This depends on CSS
+//  custom properties (variables), which I probably wouldn't rely on in production just yet.
+//  Instead, I'd look into Vue's built-in CSS preprocessing.
+//  Consider moving to a dedicated file named something more obvious.
+
+:root {
+
+	//! -- Generic
+	/// ------------------------
+	--white:      @white;
+	--gray-light: @gray-light;
+	--gray:       @gray;
+	--gray-dark:  @gray-dark;
+	--black:      @black;
+	--red:        @red;
+	--green:      @green;
+	--forest:     @forest;
+
+	--red-bg:    mix(@white, @red   , 70%);
+	--yellow-bg: mix(@white, @yellow, 70%);
+	--green-bg:  mix(@white, @green , 70%);
+
+	--red-border:    mix(@black, @red   , 50%);
+	--yellow-border: mix(@black, @yellow, 50%);
+	--green-border:  mix(@black, @green , 50%);
+
+	--padding-v-less: @padding-v-less;
+	--padding-h-less: @padding-h-less;
+	--padding-v:      @padding-v;
+	--padding-h:      @padding-h;
+	--padding-v-more: @padding-v-more;
+	--padding-h-more: @padding-h-more;
+
+	--size-h1:    @size-h1;
+	--size-h2:    @size-h2;
+	--size-h3:    @size-h3;
+	--size-h4:    @size-h4;
+	--size-h5:    @size-h5;
+	--size-h6:    @size-h6;
+	--size-small: @size-small;
+
+	--border-width: @base-border-width;
+	--border-color: @base-border-color;
+
+	//! -- Components
+	/// ------------------------
+	--add-stock-form-width-xs: @add-stock-form-width-xs;
+	--add-stock-form-width-sm: @add-stock-form-width-sm;
+
+	--stock-card-width-xs: @stock-card-width-xs;
+	--stock-card-width-sm: @stock-card-width-sm;
+
+	--message-padding:       @message-padding;
+	--message-border-radius: @message-border-radius;
+
+	font-size: @size-base; // set rem
+}
+
+
+//! ELEMENTS, ETC.
+//! --------------------------------------------------
+
+body {
+	color: @black;
+	font-family: @font-stack;
+	font-size: @size-base;
+	background-color: @gray-light;
+}
+* {
+	box-sizing: border-box;
+}
+
+pre,
+code {
+	font-family: "Courier New", monospace, @font-emoji;
+}
+
+//! -- Type
+/// ------------------------
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	font-weight: bold;
+	margin-top: 0;
+}
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+	margin-bottom: @padding-v;
+}
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin-bottom: (@padding-v / 2)
+}
+h1, .h1 {
+	font-size: @size-h1;
+}
+h2, .h2 {
+	font-size: @size-h2;
+}
+h3, .h3 {
+	font-size: @size-h3;
+}
+h4, .h4 {
+	font-size: @size-h4;
+}
+h5, .h5 {
+	font-size: @size-h5;
+}
+h6, .h6 {
+	font-size: @size-h6;
+}
+header {
+}
+p {
+	margin-top: 0;
+	margin-bottom: (@padding-v / 2);
+}
+

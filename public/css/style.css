@@ -1,0 +1,284 @@
+/**
+ * Global Styles for Stock Watcher - style.less
+ */
+:root {
+  --white: #fff;
+  --gray-light: #ddd;
+  --gray: #bbb;
+  --gray-dark: #777;
+  --black: #444;
+  --red: #f00;
+  --green: #73ad21;
+  --forest: #008001;
+  --red-bg: #ffb3b3;
+  --yellow-bg: #fff0c7;
+  --green-bg: #d5e6bc;
+  --red-border: #a22222;
+  --yellow-border: #a28844;
+  --green-border: #5c7933;
+  --padding-v-less: 10px;
+  --padding-h-less: 10px;
+  --padding-v: 20px;
+  --padding-h: 30px;
+  --padding-v-more: 40px;
+  --padding-h-more: 50px;
+  --size-h1: 3rem;
+  --size-h2: 2rem;
+  --size-h3: 1.5rem;
+  --size-h4: 1rem;
+  --size-h5: 1rem;
+  --size-h6: 0.8rem;
+  --size-small: 0.8em;
+  --border-width: 1px;
+  --border-color: currentcolor;
+  --add-stock-form-width-xs: 320px;
+  --add-stock-form-width-sm: 320px;
+  --stock-card-width-xs: 320px;
+  --stock-card-width-sm: 320px;
+  --message-padding: 10px;
+  --message-border-radius: 4px;
+  font-size: 12px;
+}
+body {
+  color: #444;
+  font-family: "Droid Serif", Cambria, Georgia, Times, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
+  background-color: #ddd;
+}
+* {
+  box-sizing: border-box;
+}
+pre,
+code {
+  font-family: "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: bold;
+  margin-top: 0;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-bottom: 20px;
+}
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-bottom: 10px;
+}
+h1,
+.h1 {
+  font-size: 3rem;
+}
+h2,
+.h2 {
+  font-size: 2rem;
+}
+h3,
+.h3 {
+  font-size: 1.5rem;
+}
+h4,
+.h4 {
+  font-size: 1rem;
+}
+h5,
+.h5 {
+  font-size: 1rem;
+}
+h6,
+.h6 {
+  font-size: 0.8rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.footer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #bbb;
+  font-size: 0.8em;
+  text-align: center;
+}
+.footer a {
+  color: #73ad21;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #008001;
+}
+/*input,select,textarea*/
+.form-control,
+.form-button {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.form-control {
+  border-style: solid;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-style: solid;
+  background: transparent;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid currentcolor;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button:active,
+.button:focus {
+  color: inherit;
+}
+.card {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+.minmax {
+  display: -ms-flexbox;
+  display: flex;
+}
+.minmax-chart {
+  max-width: 0.8em;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  /*input[type='range']*/
+}
+.minmax-chart .minmax-chart-display {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 8em;
+  color: currentcolor;
+  margin-left: -3.6em;
+}
+.minmax-chart .minmax-chart-display:focus {
+  outline: none;
+}
+.minmax-chart .minmax-chart-display::-webkit-slider-runnable-track {
+  height: 2px;
+  background: currentcolor;
+  border-color: transparent;
+  cursor: default;
+}
+.minmax-chart .minmax-chart-display::-webkit-slider-thumb {
+  width: 0;
+  height: 0;
+  border-left: 0.4em solid transparent;
+  border-right: 0.4em solid transparent;
+  border-top: 0.8em solid currentcolor;
+  cursor: default;
+  -webkit-appearance: none;
+          appearance: none;
+  margin-top: -0.8em;
+}
+.minmax-chart .minmax-chart-display::-moz-range-track {
+  height: 2px;
+  background: currentcolor;
+  border-color: transparent;
+  cursor: default;
+}
+.minmax-chart .minmax-chart-display::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border-left: 0.4em solid transparent;
+  border-right: 0.4em solid transparent;
+  border-top: 0.8em solid currentcolor;
+  cursor: default;
+}
+.minmax-chart .minmax-chart-display::-ms-track {
+  height: 2px;
+  background: currentcolor;
+  cursor: default;
+  border-radius: 0;
+  background: transparent;
+  border-color: transparent;
+  border-width: 0.8em 0;
+  color: transparent;
+}
+.minmax-chart .minmax-chart-display::-ms-fill-lower {
+  background-color: currentcolor;
+}
+.minmax-chart .minmax-chart-display::-ms-fill-upper {
+  background-color: currentcolor;
+}
+.minmax-chart .minmax-chart-display::-ms-thumb {
+  width: 0;
+  height: 0;
+  border-left: 0.4em solid transparent;
+  border-right: 0.4em solid transparent;
+  border-top: 0.8em solid currentcolor;
+  cursor: default;
+}
+.minmax-labels {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+.minmax-label {
+  margin-left: 0.4em;
+}
+.minmax-label-high {
+  top: 0;
+}
+.minmax-label-low {
+  bottom: 0;
+}
+.for-screenreaders {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+/*# sourceMappingURL=style.css.map */

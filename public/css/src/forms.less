@@ -1,0 +1,20 @@
+//
+// Base Form Styles - forms.less
+//
+
+
+.form {} // I've been burned too many times by stying <form> itself; .form is much more maintainable.
+
+/*input,select,textarea*/.form-control,
+/*button*/.form-button { // see https://csswizardry.com/2012/07/quasi-qualified-css-selectors/
+	padding-top:    @input-padding-v;
+	padding-bottom: @input-padding-v;
+}
+.form-control {
+	.input-unset();
+	padding-left:  @padding-h;
+	padding-right: @padding-h;
+	border: @input-border-width solid @input-border-color;
+	border-radius: @input-border-radius;
+	font-weight: bold;
+}
