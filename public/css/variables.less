@@ -43,6 +43,8 @@
 
 //! -- Spacing
 /// ------------------------
+@padding-v-less:   10px;
+@padding-h-less:   10px;
 @padding-v:        20px;
 @padding-h:        30px;
 @padding-v-more:   (@padding-v * 2);
@@ -50,7 +52,7 @@
 
 //! -- Appearance
 /// ------------------------
-@base-border-radius:   2px;
+@base-border-radius:   4px;
 
 
 //! FORMS
@@ -67,3 +69,30 @@
 //! --------------------------------------------------
 
 @button-border-radius:   @base-border-radius;
+
+
+//! CARDS
+//! --------------------------------------------------
+
+@card-padding:         10px;
+@card-border-radius:   @base-border-radius;
+
+
+//! MIN/MAX CHART
+//! --------------------------------------------------
+
+@minmax-height:          8em;
+
+@minmax-pointer-color:   @gray;
+@minmax-pointer-size:    10px;
+
+@minmax-line-color:      @gray;
+@minmax-line-width:      2px;
+
+
+//! INDIVIDUAL COMPONENTS
+//! --------------------------------------------------
+//  Many of these variables will be exposed as CSS var()s for use in the component CSS.
+
+@stock-card-width:          320px;
+@stock-card-chart-height:   @minmax-height;

@@ -8,6 +8,7 @@
 //  I'm selectively exposing certain variables for use in the component CSS.  This depends on CSS
 //  custom properties (variables), which I probably wouldn't rely on in production just yet.
 //  Instead, I'd look into Vue's built-in CSS preprocessing.
+//  Consider moving to a dedicated file named something more obvious.
 
 :root {
 	--white:      @white;
@@ -15,6 +16,8 @@
 	--gray:       @gray;
 	--black:      @black;
 	--green:      @green;
+	--forest:     @forest;
+	--red:        @red;
 
 	--padding-v:      @padding-v;
 	--padding-v-more: @padding-v-more;
@@ -27,6 +30,10 @@
 	--size-h4: @size-h4;
 	--size-h5: @size-h5;
 	--size-h6: @size-h6;
+
+	--stock-card-width:        @stock-card-width;
+	--stock-card-chart-height: @stock-card-chart-height;
+	--stock-card-row-height:   (@stock-card-chart-height / 2);
 }
 
 
@@ -61,12 +68,12 @@ h6, .h6 {
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-	margin-bottom: (@padding-v * 2);
+	margin-bottom: @padding-v;
 }
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	margin-bottom: @padding-v
+	margin-bottom: (@padding-v / 2)
 }
 h1, .h1 {
 	font-size: @size-h1;
@@ -85,6 +92,8 @@ h5, .h5 {
 }
 h6, .h6 {
 	font-size: @size-h6;
+}
+header {
 }
 p {
 	margin-top: 0;
